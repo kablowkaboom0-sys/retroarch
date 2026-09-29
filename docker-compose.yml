@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+    retroarch-web:
+        image: retroarch
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: retroarch
+        # volumes:
+        #     - ~/retroarch:/var/www/html/assets/cores/retroarch
+        ports:
+            - '8080:80'
+        restart: unless-stopped
